@@ -27,6 +27,9 @@ m4 = data4['model']
 e = data1['le_day']
 
 def show_predict_page():
+
+    st.set_page_config(page_title='Traffic Prediction')
+
     st.title("Traffic Prediction")
 
     st.write("""### We need some information about the date and Junction to predict the traffic.""")
@@ -95,21 +98,21 @@ def show_predict_page():
     if ok:
         if junction == 1:
             prediction = m1.predict([[year, month, date, hour, day]])
-            prediction = np.ceil(prediction[0])
-            st.write("The number of vehicles on the Junction 1 at the given hour are predicted to be:", prediction)
+            prediction = int(np.ceil(prediction[0]))
+            st.subheader(f"The number of vehicles on the Junction 1 at the given hour are predicted to be {prediction}")
 
         elif junction == 2:
             prediction = m2.predict([[year, month, date, hour, day]])
-            prediction = np.ceil(prediction[0])
-            st.write("The number of vehicles on the Junction 2 at the given hour are predicted to be:", prediction)
+            prediction = int(np.ceil(prediction[0]))
+            st.subheader(f"The number of vehicles on the Junction 2 at the given hour are predicted to be {prediction}")
 
         elif junction == 3:
             prediction = m3.predict([[year, month, date, hour, day]])
-            prediction = np.ceil(prediction[0])
-            st.write("The number of vehicles on the Junction 3 at the given hour are predicted to be:", prediction)
+            prediction = int(np.ceil(prediction[0]))
+            st.subheader(f"The number of vehicles on the Junction 3 at the given hour are predicted to be {prediction}")
 
         elif junction == 4:
             prediction = m4.predict([[year, month, date, hour, day]])
             prediction = int(np.ceil(prediction[0]))
-            st.write("The number of vehicles on the Junction 4 at the given hour are predicted to be:", prediction)            
+            st.subheader(f"The number of vehicles on the Junction 4 at the given hour are predicted to be {prediction}")            
 

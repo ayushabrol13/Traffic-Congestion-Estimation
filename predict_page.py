@@ -3,7 +3,8 @@ import pickle
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-import math
+import datetime
+import calendar
 
 def load_model():
     with open('final_model_1.pkl', 'rb') as f1:
@@ -26,9 +27,12 @@ m4 = data4['model']
 
 e = data1['le_day']
 
-def show_predict_page():
+def date_to_day(year, month, date):
+    date = datetime.datetime(year, month, date)
+    day = calendar.day_name[date.weekday()]
+    return day
 
-    st.set_page_config(page_title='Traffic Prediction')
+def show_predict_page():
 
     st.title("Traffic Prediction")
 
@@ -70,15 +74,7 @@ def show_predict_page():
         0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23
     }
 
-    day = {
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday"
-    }
+    
 
     junction = {
         1, 2, 3, 4 
@@ -88,9 +84,9 @@ def show_predict_page():
     month = st.selectbox("Type in the month", month)
     date = st.selectbox("Type in the date", date)
     hour = st.selectbox("At what approximate hour would you be travelling?", hour)
-    day = st.selectbox("Select the day", day)
     junction = st.selectbox("Which Junction would you be following?", junction)
 
+    day = date_to_day(year, month, date)
     day = e[day]
 
     ok = st.button("Predict Traffic")
@@ -115,4 +111,3 @@ def show_predict_page():
             prediction = m4.predict([[year, month, date, hour, day]])
             prediction = int(np.ceil(prediction[0]))
             st.subheader(f"The number of vehicles on the Junction 4 at the given hour are predicted to be {prediction}")            
-

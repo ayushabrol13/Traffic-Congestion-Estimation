@@ -47,6 +47,54 @@ Link to the dataset: [traffic.csv](https://github.com/ayushabrol13/Traffic-Predi
 
 ![Traffic Flow](https://raw.githubusercontent.com/ayushabrol13/Traffic-Prediction---PRML-Course-Project/master/plots/traffic_flow.png "Traffic Flow across Junctions")
 
+## Correlation Heatmap
+
+![Correlation Heatmap](https://raw.githubusercontent.com/ayushabrol13/Traffic-Prediction/master/plots/correlation_heatmap.png "Correlation Heatmap")
+
+## Yearwise Count
+
+![Year Count](https://raw.githubusercontent.com/ayushabrol13/Traffic-Prediction/master/plots/Count_by_years.png "Year Count")
+
+## Traffic Flow Pairplots
+
+![Traffic Flow Pairplots](https://raw.githubusercontent.com/ayushabrol13/Traffic-Prediction/master/plots/traffic_flow_pairplot.png "Traffic Flow Pairplots")
+
+## Model Evaluation
+
+- **Junction 1**
+  ![Junction 1](plots/1.png "Junction 1")
+
+- **Junction 2**
+  ![Junction 2](plots/2.png "Junction 2")
+
+- **Junction 3**
+  ![Junction 3](plots/3.png "Junction 3")
+
+- **Junction 4**
+  ![Junction 4](plots/4.png "Junction 4")
+
+
+## Web Application and Pipeline Deployment
+
+We implemented an end-to-end pipeline using the python pickle library. The four best models
+for four different junctions were saved along with the preprocessing done on the data using the
+pickle library and the four “.pkl” model files were created.
+
+Then, we converted our directory into a pipenv environment and installed all the necessary
+libraries.
+We created a python file where we used the Python StreamLit library to render our website
+server which included a home page (predictions page) which takes the input features from the
+user in the form of radio buttons. Features input by the user:
+
+- Year
+- Month
+- Date
+- Hour
+- Junction
+
+We import all the four saved models in our py file and select which model to apply according to
+the Junction information provided by the user and finally return the rounded off predictions
+(Number of Vehicles) to the user.
 ## Contributors
 
 [Ayush Abrol](https://github.com/ayushabrol13)

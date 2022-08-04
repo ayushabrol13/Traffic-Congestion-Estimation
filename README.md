@@ -3,7 +3,7 @@
 ## Problem Statement
 
 Traffic prediction means forecasting the volume and
-density of traffic flow, usually for the purpose of managing vehicle movement, reducing congestion, and generating the optimal (least time or energy-consuming) route. The task of detecting traffic for the next day, week etc.
+density of traffic flow, generally for the purpose of managing vehicle movement, reducing congestion, and generating the optimal (least time or energy-consuming) route. The task of detecting traffic for the next day, week etc.
 
 ## Dataset
 

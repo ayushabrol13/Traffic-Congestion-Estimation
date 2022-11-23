@@ -84,7 +84,8 @@ Then, we converted our directory into a pipenv environment and installed all the
 libraries.
 We created a python file where we used the Python StreamLit library to render our website
 server which included a home page (predictions page) which takes the input features from the
-user in the form of radio buttons. Features input by the user:
+user in the form of radio buttons. 
+Features that were input by the user:
 
 - Year
 - Month
